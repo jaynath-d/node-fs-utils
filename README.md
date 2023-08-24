@@ -10,3 +10,23 @@
 </div>
 
 ---
+
+## Installation
+To install the package, use the following command:
+```sh
+npm install --save node-fs-kit
+```
+
+
+## Usage
+Below are some minimal usage examples demonstrating how to use the `node-fs-kit` package.
+
+### Initialization
+You can initialize the NodeFSKit using either CommonJS or ES6 syntax:
+```javascript
+// CommonJS
+const fs = require("node-fs-kit");
+
+// ES6
+import fs from 'node-fs-kit';
+```
