@@ -27,7 +27,7 @@ export default class FileSystemWrapper {
      * @param {IConfig} config - Configuration object containing the path.
      * @returns {FileSystemWrapper} - New instance of FileSystemWrapper.
      */
-    static config = (config: IConfig):FileSystemWrapper => {
+    static config = (config: IConfig): FileSystemWrapper => {
         return new FileSystemWrapper(config);
     }
 
@@ -39,7 +39,7 @@ export default class FileSystemWrapper {
         try {
             const files = await fs.readdir(this._path);
             return files;
-          } catch (err) {
+        } catch (err) {
             throw err;
         }
     }
@@ -50,10 +50,10 @@ export default class FileSystemWrapper {
      */
     public async stat(): Promise<any> {
         try {
-          const stats = await fs.stat(this._path);
-          return stats;
+            const stats = await fs.stat(this._path);
+            return stats;
         } catch (err) {
-          throw err;
+            throw err;
         }
     }
 
