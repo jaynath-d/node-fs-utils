@@ -1,6 +1,6 @@
 {
   "name": "node-fs-utils",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Simplify file system tasks and enhance child process management with node-fs-utils for Node.js applications",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -8,6 +8,13 @@
     "test": "jest",
     "build": "tsc"
   },
+  "keywords": [
+    "node-fs-utils",
+    "fs-utils",
+    "fs",
+    "utils",
+    "node"
+  ],
   "devDependencies": {
     "@types/jest": "^27.5.2",
     "jest": "^27.5.1",
