@@ -7,12 +7,19 @@ interface IConfig {
     path: string;
 }
 
+interface IUtils{
+    copyFile(source: string, target: string):Promise<void>;
+    rm(path: string):Promise<void>;
+    rmdir(path: string):Promise<void>;
+}
+
 /**
  * Wrapper class for various file system operations.
  */
 export default class NodeFSUtils {
 
     private _path: string;
+    static utils:IUtils = fs;
 
     /**
      * Creates an instance of NodeFSUtils.
