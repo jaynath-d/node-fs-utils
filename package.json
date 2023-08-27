@@ -13,7 +13,7 @@
     "fs-utils",
     "fs",
     "utils",
-    "node",
+    "node"
   ],
   "devDependencies": {
     "@types/jest": "^27.5.2",
