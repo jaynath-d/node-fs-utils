@@ -1,7 +1,7 @@
 {
-  "name": "node-fs-kit",
-  "version": "0.0.1",
-  "description": "Simplify file system tasks and enhance child process management with node-fs-kit for Node.js applications",
+  "name": "node-fs-utils",
+  "version": "0.1.0",
+  "description": "Simplify file system tasks and enhance child process management with node-fs-utils for Node.js applications",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
