@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 const childProcess = require('child_process');
-import FileSystemWrapper from '../src/index'; // Update the path to the actual location
+import fsUtils from '../src/index'; // Update the path to the actual location
 
 const mockExec = jest.fn();
 
@@ -12,9 +12,9 @@ jest.mock('fs/promises', () => ({
 
 jest.mock('child_process');
 
-describe('FileSystemWrapper', () => {
+describe('NodeFSUtils', () => {
   const testPath = '.'; // Update with your test folder's path
-  const wrapper = FileSystemWrapper.config({ path: testPath });
+  const wrapper = fsUtils.config({ path: testPath });
 
   it('readdir should return an array of filenames', async () => {
     (fs.readdir as jest.Mock).mockResolvedValue(['file1.txt', 'file2.txt']);
@@ -61,7 +61,7 @@ com/example/SomeClass.class
     const classNamePattern = 'Driver';
     const expectedClassNames = ['com.example.Driver', 'com.example.HiveDriver'];
 
-    const result = await wrapper.getClassNamesInJar(classNamePattern);
+    const result = await wrapper.findClassNamesInJar(classNamePattern);
 
     expect(result).toEqual(expectedClassNames);
   });
@@ -75,7 +75,7 @@ com/example/SomeClass.class
 
     const classNamePattern = 'Driver';
 
-    await expect(wrapper.getClassNamesInJar(classNamePattern)).rejects.toThrow(mockError);
+    await expect(wrapper.findClassNamesInJar(classNamePattern)).rejects.toThrow(mockError);
 
   });
 
@@ -88,7 +88,7 @@ com/example/SomeClass.class
 
     const classNamePattern = 'Driver';
     try {
-      await wrapper.getClassNamesInJar(classNamePattern);
+      await wrapper.findClassNamesInJar(classNamePattern);
       // If the promise doesn't reject, fail the test
       fail('Expected the promise to reject.');
     } catch (error) {

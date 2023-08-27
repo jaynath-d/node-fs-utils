@@ -7,15 +7,22 @@ interface IConfig {
     path: string;
 }
 
+interface IUtils{
+    copyFile(source: string, target: string):Promise<void>;
+    rm(path: string):Promise<void>;
+    rmdir(path: string):Promise<void>;
+}
+
 /**
  * Wrapper class for various file system operations.
  */
-export default class FileSystemWrapper {
+export default class NodeFSUtils {
 
     private _path: string;
+    static utils:IUtils = fs;
 
     /**
-     * Creates an instance of FileSystemWrapper.
+     * Creates an instance of NodeFSUtils.
      * @param {IConfig} config - Configuration object containing the path.
      */
     constructor(config: IConfig) {
@@ -23,12 +30,12 @@ export default class FileSystemWrapper {
     }
 
     /**
-     * Create a new instance of FileSystemWrapper with configuration.
+     * Create a new instance of NodeFSUtils with configuration.
      * @param {IConfig} config - Configuration object containing the path.
-     * @returns {FileSystemWrapper} - New instance of FileSystemWrapper.
+     * @returns {NodeFSUtils} - New instance of NodeFSUtils.
      */
-    static config = (config: IConfig): FileSystemWrapper => {
-        return new FileSystemWrapper(config);
+    static config = (config: IConfig): NodeFSUtils => {
+        return new NodeFSUtils(config);
     }
 
     /**
@@ -62,7 +69,7 @@ export default class FileSystemWrapper {
      * @param {string} classNamePattern - Pattern to filter class names.
      * @returns {Promise<string[]>} - A promise that resolves with an array of class names.
      */
-    public async getClassNamesInJar(classNamePattern: any) {
+    public async findClassNamesInJar(classNamePattern: any) {
         return new Promise((resolve, reject) => {
             exec(`jar tf ${this._path}`, (error: any, stdout: any, stderr: any) => {
                 if (error) {

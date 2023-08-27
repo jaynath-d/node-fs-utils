@@ -34,7 +34,7 @@ import fs from 'node-fs-utils';
 ### Read Direcory
 Read the contents of a directory.
 ```javascript
-const output = fs.config({path: <directory_path>}).readdir()
+const output = await fs.config({path: <directory_path>}).readdir()
 console.log(output)
 ```
 ```json
@@ -48,7 +48,7 @@ console.log(output)
 ### Get Directory Info
 Get information about a file or directory.
 ```javascript
-const output = fs.config({path: <directory_path>}).readdir()
+const output = await fs.config({path: <directory_path>}).stat()
 console.log(output)
 ```
 ```json
@@ -77,11 +77,28 @@ console.log(output)
 ### Extract Class Name
 Get class names from a JAR file based on a pattern.
 ```javascript
-const output = fs.config({path: <jarfile_path>}).getClassNamesInJar(<classNamePattern>)
+const output = await fs.config({path: <jarfile_path>}).findClassNamesInJar(<classNamePattern>)
 console.log(output)
 ```
 ```json
 [ "org.postgresql.Driver" ]
+```
+
+### Copy File
+source filename to copy
+```javascript
+await fs.utils.copyFile('<source_path>', '<destination_path>')
+```
+
+### Remove Directory
+Removes the directory identified by path.
+```javascript
+await fs.utils.rmdir('<path>')
+```
+
+### Remove Files & Direcotry
+```javascript
+await fs.utils.rm('<path>')
 ```
 
 
