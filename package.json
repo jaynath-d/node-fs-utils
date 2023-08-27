@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/jaynath-d/node-fs-kit.git"
+    "url": "git://github.com/jaynath-d/node-fs-utils.git"
   },
   "author": "Jaynath Ray <pcode027@gmail.com>",
   "license": "MIT",
