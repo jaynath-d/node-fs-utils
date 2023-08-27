@@ -30,3 +30,58 @@ const fs = require("node-fs-utils");
 // ES6
 import fs from 'node-fs-utils';
 ```
+
+### Read Direcory
+Read the contents of a directory.
+```javascript
+const output = fs.config({path: <directory_path>}).readdir()
+console.log(output)
+```
+```json
+[
+  "test.csv",
+  "test.txt",
+  "test.js"
+]
+```
+
+### Get Directory Info
+Get information about a file or directory.
+```javascript
+const output = fs.config({path: <directory_path>}).readdir()
+console.log(output)
+```
+```json
+{
+  "dev": 16777223,
+  "mode": 16893,
+  "nlink": "5",
+  "uid": 501,
+  "gid": 20,
+  "rdev": 0,
+  "blksize": 4096,
+  "ino": 8341104,
+  "size": 160,
+  "blocks": 0,
+  "atimeMs": 1692462842366.5476,
+  "mtimeMs": 1692462640828.8342,
+  "ctimeMs": 1692462640828.8342,
+  "birthtimeMs": 1687148653000,
+  "atime": "2023-08-19T16:34:02.367Z",
+  "mtime": "2023-08-19T16:30:40.829Z",
+  "ctime": "2023-08-19T16:30:40.829Z",
+  "birthtime": "2023-06-19T04:24:13.000Z"
+}
+```
+
+### Extract Class Name
+Get class names from a JAR file based on a pattern.
+```javascript
+const output = fs.config({path: <jarfile_path>}).getClassNamesInJar(<classNamePattern>)
+console.log(output)
+```
+```json
+[ "org.postgresql.Driver" ]
+```
+
+
