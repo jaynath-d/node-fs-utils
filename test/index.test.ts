@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 const childProcess = require('child_process');
-import FileSystemWrapper from '../fs_test'; // Update the path to the actual location
+import FileSystemWrapper from '../src/index'; // Update the path to the actual location
 
 const mockExec = jest.fn();
 
