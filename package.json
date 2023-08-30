@@ -1,6 +1,6 @@
 {
   "name": "node-fs-utils",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Simplify file system tasks and enhance child process management with node-fs-utils for Node.js applications",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
